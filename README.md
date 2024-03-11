@@ -67,4 +67,4 @@ The figure below illustrates this behavior using an example.
 
 Something listed an examples for the task:
 * This is an unordered list row
-1. And this is an ordered list item
+1. And this is an ordered list item and has the index of 1.

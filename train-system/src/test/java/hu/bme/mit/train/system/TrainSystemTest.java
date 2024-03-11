@@ -50,5 +50,24 @@ public class TrainSystemTest {
 		Assert.assertEquals(0, controller.getReferenceSpeed());
 	}
 
+	@Test
+	public void RaisingAlarmFlagAndInitiatingSafetyBrakeFeature() {
+		sensor.overrideSpeedLimit(10);
+
+		Assert.assertEquals(0, controller.getReferenceSpeed());
+
+		user.overrideJoystickPosition(5);
+
+		controller.followSpeed();
+		Assert.assertEquals(5, controller.getReferenceSpeed());
+		controller.followSpeed();
+		Assert.assertEquals(10, controller.getReferenceSpeed());
+
+		user.setAlarmflag(true);
+		user.overrideJoystickPosition(5);
+		Assert.assertEquals(0, controller.getReferenceSpeed());
+
+	}
+
 	
 }

@@ -33,6 +33,7 @@ public class TrainUserImpl implements TrainUser {
 			controller.setJoystickPosition(joystickPosition);
 		}
 	}
+	@Override
 	public void setAlarmflag(boolean flag){
 		alarmflag=flag;
 	}

@@ -68,6 +68,10 @@ public class TrainSystemTest {
 		Assert.assertEquals(0, controller.getReferenceSpeed());
 
 	}
+	@Test
+    public void givenTable_whenGet_returnsSuccessfully() {
+		Assert.assertNotNull(sensor.getTableData());
+	}
 
 	
 }

@@ -3,8 +3,6 @@ package hu.bme.mit.train.interfaces;
 import java.time.LocalDate;
 import java.util.Set;
 
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.Table;
 import com.google.common.collect.Table.Cell;
 
 public interface TrainSensor {

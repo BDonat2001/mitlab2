@@ -46,7 +46,7 @@ public class TrainSensorImpl implements TrainSensor {
 		relativeSetSpeedLimitCheck(speedLimit);
 	}
 	@Override
-	public void relativeSetSpeedLimitCheck(int speedlimit){{
+	public void relativeSetSpeedLimitCheck(int speedlimit){
 		if( controller.getReferenceSpeed()/speedlimit < 0.5){
 			user.setAlarmState(true);
 		}

@@ -17,4 +17,6 @@ public interface TrainSensor {
 	
 	void relativeSetSpeedLimitCheck(int speedlimit);
 
+	void absoluteSetSpeedLimitCheck(int speedlimit);
+
 }

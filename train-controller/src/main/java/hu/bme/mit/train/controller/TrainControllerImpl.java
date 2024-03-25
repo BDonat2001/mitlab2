@@ -4,26 +4,37 @@ import hu.bme.mit.train.interfaces.TrainController;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class TrainControllerImpl extends TimerTask implements TrainController {
+public class MyTimer extends TimerTask{
+	@Override
+	public void run(){
+		completeTask();
+	}
+	private void completeTask(){
+		try {
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+}
+
+public class TrainControllerImpl implements TrainController {
 
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
 
-	@Override
-	public void run(){
-		completeTask();
+	TimerTask timerTask = new MyTimer();
+	Timer timer = new Timer(true);
+	timer.scheduleAtFixedRate(timerTask, 0, 10000)
+	try {
+		Thread.sleep(100000);
+	} catch (Exception e) {
+		// TODO: handle exception
+		e.printStackTrace();
 	}
-
-	private void completeTask(){
-		try {
-			followSpeed();
-			Thread.sleep(1000);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-	}
-
+	timer.cancel();
 
 
 	@Override

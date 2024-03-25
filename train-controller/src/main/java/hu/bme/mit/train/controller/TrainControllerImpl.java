@@ -27,9 +27,10 @@ public class TrainControllerImpl implements TrainController {
 
 	TimerTask timerTask = new MyTimer();
 	Timer timer = new Timer(true);
-	timer.scheduleAtFixedRate(timerTask, 0, 10000)
+	timer.scheduleAtFixedRate(timerTask, 0, 10000);
 	try {
-		Thread.sleep(100000);
+		followSpeed();
+		Thread.sleep(10000);
 	} catch (Exception e) {
 		// TODO: handle exception
 		e.printStackTrace();

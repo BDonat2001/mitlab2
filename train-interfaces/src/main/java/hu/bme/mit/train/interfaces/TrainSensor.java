@@ -14,5 +14,7 @@ public interface TrainSensor {
 	LocalDate getTime();
 
 	Set<Cell<LocalDate, Integer, Integer>> getTableData();
+	
+	void relativeSetSpeedLimitCheck(int speedlimit);
 
 }

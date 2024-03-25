@@ -20,6 +20,7 @@ public class TrainSensorTest {
         mockTU = mock(TrainUser.class);
         mockTC = mock(TrainController.class);
         sensor = new TrainSensorImpl(mockTC, mockTU);
+        when(mockTC.getReferenceSpeed()).thenReturn(5);
     }
 
     @Test
@@ -40,7 +41,7 @@ public class TrainSensorTest {
     @Test
     public void relativeSpeedLimitGreaterTest(){
         sensor.overrideSpeedLimit(155);
-        verify(mockTU,times(0)).setAlarmState(false);
+        verify(mockTU,times(1)).setAlarmState(false);
     }
 
     

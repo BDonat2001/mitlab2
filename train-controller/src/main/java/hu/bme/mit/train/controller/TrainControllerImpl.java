@@ -1,12 +1,30 @@
 package hu.bme.mit.train.controller;
 
 import hu.bme.mit.train.interfaces.TrainController;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class TrainControllerImpl implements TrainController {
+public class TrainControllerImpl extends TimerTask implements TrainController {
 
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
+
+	@Override
+	public void run(){
+		completeTask();
+	}
+
+	private void completeTask(){
+		try {
+			followSpeed();
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+
 
 	@Override
 	public void followSpeed() {
@@ -48,7 +66,7 @@ public class TrainControllerImpl implements TrainController {
 
 	@Override
 	public void enforceSafetyBrake(){
-		referenceSpeed=0;
+		referenceSpeed = 0;
 	}
 
 }
